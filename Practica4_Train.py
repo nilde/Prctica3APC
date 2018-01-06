@@ -52,9 +52,9 @@ def train_NN(parametrosNN):
 
         #APRENENTATGE XARXA NEURAL (a Practica4_NN.py)
         print 'TRAIN NN: Class '+str(nom_classes[cidx])+' vs All: '+str(shape(x1)[0])+' vs '+str(shape(x2)[0])+' samples \r' 
-        momentumValues=arange(0.1,1.0,0.1)
-        learningRateValues=arange(0.1,0.5,0.010)
-        weightDecayValues=arange(0.1,0.5,0.05)
+        momentumValues=arange(0.4,1.0,0.1)
+        learningRateValues=arange(0.1,0.5,0.10)
+        weightDecayValues=arange(0.1,0.5,0.1)
         epochsValues=arange(10,100,5)
         for momentum in momentumValues:
             for learningRate in learningRateValues:

@@ -143,17 +143,17 @@ def trainm_NN(x1,x2,parametresNN,actualNet):
             n=n1
         #Initialization weights
         if(actualNet==1):
-            r = math.sqrt(6/((199+40+3+5+1)*(1.0)))
+            r = math.sqrt(1/((199+40+3+5+1)*(1.0)))
             sizeOfNet=199*40+40*3+3*5+5*3+3
         elif (actualNet==2):
-            r = math.sqrt(6/((199+12+3+1)*(1.0)))
+            r = math.sqrt(1/((199+12+3+1)*(1.0)))
             sizeOfNet=199*12+12*3+3
         elif (actualNet==3):
-            r = math.sqrt(6/((199+27+5+1)*(1.0)))
+            r = math.sqrt(1/((199+27+5+1)*(1.0)))
             sizeOfNet=199*27+27*5+5
         else:
             #TODO
-            r = math.sqrt(6/((199+40+3+5+1)*(1.0)))
+            r = math.sqrt(1/((199+40+3+5+1)*(1.0)))
             sizeOfNet=199*40+40*3+3*5+5
 
         weights_init = random.uniform(low=-r, high=r, size=(sizeOfNet,))
