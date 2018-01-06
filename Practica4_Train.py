@@ -23,12 +23,12 @@ from pybrain.tools.shortcuts import buildNetwork
 
 parametresNN={
     'Dimensions':199,
-    'Momentum': 0.4,
-    'learningrate': 0.078,
-    'verbose': False,
-    'weightdecay': 0.01,
+    'Momentum': 0.9,
+    'learningrate': 0.004,
+    'verbose': True,
+    'weightdecay': 0.08,
     'batchlearning': True,
-    'maxEpochs': 35,
+    'maxEpochs': 60,
     }
 
 
@@ -56,6 +56,9 @@ def train_NN(parametrosNN):
         learningRateValues=arange(0.1,0.5,0.10)
         weightDecayValues=arange(0.1,0.5,0.1)
         epochsValues=arange(10,100,5)
+
+        nn_model = trainm_NN(x1,x2,parametrosNN,2)
+
         for momentum in momentumValues:
             for learningRate in learningRateValues:
                 for weightDecay in weightDecayValues:

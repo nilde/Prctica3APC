@@ -52,32 +52,28 @@ def trainm_NN(x1,x2,parametresNN,actualNet):
         #-----RED NUMERO 1          
 
         n1 = FeedForwardNetwork()
-        
         inLayer = TanhLayer(199)
         hiddenLayer1=TanhLayer(40)
         hiddenLayer2 = LinearLayer(3)
         hiddenLayer3 = TanhLayer(5)
-        hiddenLayer4 = LinearLayer(3)
-        outLayer = LinearLayer(1)
+        outLayer = TanhLayer(1)
+
 
         n1.addInputModule(inLayer)
         n1.addModule(hiddenLayer1)
         n1.addModule(hiddenLayer2)
         n1.addModule(hiddenLayer3)
-        n1.addModule(hiddenLayer4)
         n1.addOutputModule(outLayer)
 
         in_to_hidden1 = FullConnection(inLayer, hiddenLayer1)
         hidden1_to_hidden2=FullConnection(hiddenLayer1,hiddenLayer2)
         hidden2_to_hidden3=FullConnection(hiddenLayer2,hiddenLayer3)
-        hidden3_to_hidden4=FullConnection(hiddenLayer3,hiddenLayer4)
-        hidden4_to_out = FullConnection(hiddenLayer4, outLayer)
+        hidden3_to_out = FullConnection(hiddenLayer3, outLayer)
 
         n1.addConnection(in_to_hidden1)
         n1.addConnection(hidden1_to_hidden2)
         n1.addConnection(hidden2_to_hidden3)
-        n1.addConnection(hidden3_to_hidden4)
-        n1.addConnection(hidden4_to_out)
+        n1.addConnection(hidden3_to_out)
             
         n1.sortModules() #Crida necesaria init de moduls interns
 
@@ -143,8 +139,8 @@ def trainm_NN(x1,x2,parametresNN,actualNet):
             n=n1
         #Initialization weights
         if(actualNet==1):
-            r = math.sqrt(1/((199+40+3+5+1)*(1.0)))
-            sizeOfNet=199*40+40*3+3*5+5*3+3
+            r = math.sqrt(1/((199+70+3+5+1)*(1.0)))
+            sizeOfNet=199*70+70*3+3*5+5
         elif (actualNet==2):
             r = math.sqrt(1/((199+12+3+1)*(1.0)))
             sizeOfNet=199*12+12*3+3

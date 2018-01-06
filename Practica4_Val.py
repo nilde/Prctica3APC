@@ -29,7 +29,7 @@ from pybrain.utilities import percentError
 # per llegir el classificador on es troba la xarxa neural
 parametrosNN={
     'Dimensions':199,
-    'Momentum': 0.9,
+    'Momentum': 0.6,
     'learningrate': 0.105,
     'verbose': True,
     'weightdecay': 0.01,
